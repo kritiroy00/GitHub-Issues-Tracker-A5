@@ -64,8 +64,8 @@ function displayIssues(list) {
 
     const statusImage =
       issue.status === "open"
-        ? "/assets/open-status.png"
-        : "/assets/closed-status.png";
+        ? "./assets/open-status.png"
+        : "./assets/closed-status.png";
 
     const borderColor =
       issue.status === "open"
