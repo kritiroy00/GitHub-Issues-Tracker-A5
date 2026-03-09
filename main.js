@@ -81,7 +81,6 @@ function displayIssues(list) {
 
       <div class="p-4">
 
-        <!-- Top Row -->
         <div class="flex justify-between items-center mb-2">
 
           <img src="${statusImage}" alt="${issue.status}" class="w-5 h-5"/>
@@ -92,17 +91,14 @@ function displayIssues(list) {
 
         </div>
 
-        <!-- Title -->
         <h3 class="font-semibold text-gray-800 mb-2">
           ${issue.title || "Untitled Issue"}
         </h3>
 
-        <!-- Description -->
         <p class="text-sm text-gray-500 mb-3">
           ${issue.description ? issue.description.slice(0,80) + "..." : ""}
         </p>
 
-        <!-- Labels -->
         <div class="flex gap-2 mb-3 flex-wrap">
 
           ${(issue.labels || []).map(label => `
