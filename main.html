@@ -8,7 +8,6 @@
 </head>
 <body class="bg-gray-50">
 
-  <!-- Navbar -->
   <nav class="navbar bg-base-200 px-6">
     <div class="flex items-center gap-2 flex-1">
       <img src="./assets/github-logo.png" alt="GitHub Logo" class="w-8 h-8">
@@ -21,14 +20,13 @@
     </div>
   </nav>
 
-  <!-- Tabs -->
   <div class="flex justify-center mt-6 space-x-4">
     <button id="allTab" class="tabBtn px-6 py-2 rounded-lg font-medium bg-purple-600 text-white">All</button>
     <button id="openTab" class="tabBtn px-6 py-2 rounded-lg font-medium bg-gray-200 text-gray-700">Open</button>
     <button id="closedTab" class="tabBtn px-6 py-2 rounded-lg font-medium bg-gray-200 text-gray-700">Closed</button>
   </div>
 
-  <!-- Issues Summary Bar -->
+
   <div class="bg-white shadow-md rounded-lg mx-6 mt-6 p-4 flex flex-col md:flex-row md:items-center md:justify-between">
     <div class="flex items-center gap-4">
       <img src="./assets/Aperture.png" alt="Issues Icon" class="w-10 h-10">
@@ -49,15 +47,14 @@
     </div>
   </div>
 
-  <!-- Issues Grid -->
+
   <div id="issuesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-6"></div>
 
-  <!-- Spinner -->
+
   <div id="spinner" class="flex justify-center mt-6 hidden">
     <span class="loading loading-spinner loading-lg text-primary"></span>
   </div>
 
-  <!-- Modal -->
 <dialog id="issueModal" class="modal">
 
   <div class="modal-box max-w-2xl bg-gray-100 rounded-xl p-8">

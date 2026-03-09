@@ -1,6 +1,4 @@
-/* ======================
-GLOBAL ELEMENTS
-====================== */
+
 
 const issuesContainer = document.getElementById("issuesContainer");
 const issueCount = document.getElementById("issueCount");
@@ -16,9 +14,7 @@ const tabs = document.querySelectorAll(".tabBtn");
 let allIssues = [];
 let currentTab = "all";
 
-/* ======================
-LOAD ISSUES
-====================== */
+
 
 async function loadIssues() {
 
@@ -41,9 +37,6 @@ async function loadIssues() {
 
 }
 
-
-// DISPLAY ISSUES 
-
 function displayIssues(list) {
 
   issuesContainer.innerHTML = "";
@@ -58,7 +51,6 @@ function displayIssues(list) {
 
     const card = document.createElement("div");
 
-    /* ---------- PRIORITY ---------- */
 
     const priority = issue.priority?.toUpperCase();
 
@@ -69,28 +61,21 @@ function displayIssues(list) {
         ? "bg-yellow-500 text-white"
         : "bg-blue-500 text-white";
 
-    /* ---------- STATUS IMAGE ---------- */
 
     const statusImage =
       issue.status === "open"
         ? "/assets/open-status.png"
         : "/assets/closed-status.png";
 
-    /* ---------- BORDER COLOR ---------- */
-
     const borderColor =
       issue.status === "open"
         ? "border-green-500"
         : "border-purple-500";
 
-    /* ---------- CARD STYLE ---------- */
-
     card.className =
       `bg-white rounded-xl shadow border-t-4 ${borderColor} 
        overflow-hidden cursor-pointer hover:shadow-xl 
        hover:scale-[1.02] transition duration-300`;
-
-    /* ---------- CARD HTML ---------- */
 
     card.innerHTML = `
 
@@ -146,8 +131,6 @@ function displayIssues(list) {
 
     `;
 
-    /* ---------- MODAL CLICK ---------- */
-
     card.addEventListener("click", () => openModal(issue));
 
     issuesContainer.appendChild(card);
@@ -156,8 +139,6 @@ function displayIssues(list) {
 
 }
 
-// COUNT UPDATE
-
 
 function updateCount(list) {
 
@@ -165,15 +146,11 @@ function updateCount(list) {
 
 }
 
-/* ======================
-FILTER SYSTEM
-====================== */
 
 function applyFilters() {
 
   let filtered = [...allIssues];
 
-  // TAB FILTER
 
   if (currentTab === "open") {
     filtered = filtered.filter(issue => issue.status === "open");
@@ -183,7 +160,6 @@ function applyFilters() {
     filtered = filtered.filter(issue => issue.status === "closed");
   }
 
-  // SEARCH FILTER
 
   const searchText = searchInput.value.toLowerCase();
 
@@ -201,15 +177,9 @@ function applyFilters() {
 
 }
 
-/* ======================
-SEARCH
-====================== */
 
 searchInput.addEventListener("input", applyFilters);
 
-/* ======================
-TAB STYLE
-====================== */
 
 function setActiveTab(activeBtn) {
 
@@ -224,9 +194,6 @@ function setActiveTab(activeBtn) {
 
 }
 
-/* ======================
-TAB EVENTS
-====================== */
 
 allTab.addEventListener("click", () => {
 
@@ -258,9 +225,6 @@ closedTab.addEventListener("click", () => {
 
 });
 
-/* ======================
-MODAL
-====================== */
 
 function openModal(issue) {
 
@@ -334,8 +298,5 @@ function openModal(issue) {
 }
 
 
-/* ======================
-INIT
-====================== */
 
 loadIssues();
